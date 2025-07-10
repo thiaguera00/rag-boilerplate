@@ -10,10 +10,10 @@ async def websocket_bot(websocket: WebSocket):
 
     while True:
         try:
-            pergunta = await websocket.receive_text()
-            resposta = response_llm(pergunta)
+            question = await websocket.receive_text()
+            response = response_llm(question)
             
-            await websocket.send_text(f"🤖 {resposta}")
+            await websocket.send_text(f"🤖 {response}")
         except Exception as e:
             print(f"Erro no WebSocket: {e}")
             await websocket.send_text(f"Erro: {str(e)}")
