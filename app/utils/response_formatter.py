@@ -1,4 +1,4 @@
-def response_formater(response)-> str:
+def response_formatter(response)-> str:
     """
     Extrai a resposta final de uma saída vinda de RAG ou Function Calling.
 

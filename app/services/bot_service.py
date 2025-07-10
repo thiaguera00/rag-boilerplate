@@ -1,7 +1,7 @@
 from ..infrastructure.rag_pipeline import build_rag_pipeline
 from ..infrastructure.llm_client import get_llm
 from .bot_tools import schedule_appointment
-from ..utils.response_formatter import response_formater
+from ..utils.response_formatter import response_formatter
 from langchain.agents import initialize_agent, AgentType
 
 rag_chain = build_rag_pipeline("base.txt")
@@ -23,4 +23,4 @@ def response_llm(question: str) -> str:
     else: 
         ai_response = agent.invoke({"input":question})
 
-    return response_formater(ai_response)
+    return response_formatter(ai_response)
